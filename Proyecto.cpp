@@ -34,7 +34,7 @@ int main(int argc, char const *argv[])
     cout<<"enter student lastName: ";
     cin.getline(lastname,19,'\n');
     
-    
+    //uso de 8 variables para este caso
     
     
     return 0;
