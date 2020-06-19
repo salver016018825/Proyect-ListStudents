@@ -21,21 +21,40 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    char name[10] = "";
-    char lastname[20] = "";
-    char materias[15] = "";
+    //Mys variables 
+    double promedioAlumno = 0.0;
+    double sumaMateria = 0.0;
+    double sumaCalificacionPromedioAlumno = 0.0;
+    double CalificacionesMateria = 0.0;
+    double promedioGrupo = 0.0;
     
-    double calificaciones[5];
-    double promedio;
+    char name[3][10] ={};
+    char lastname[3][20] = {};
+    char materias[5][15] = {};
     
-    cout<<"enter stundent name: ";
-    cin.getline(name,9,'\n');
+    //areglo de 5 posiciones para las calificaciones el ultimo posicion es para el promedio del alumno
+    int totalCalicaciones = 6;
+    double calificaciones[totalCalicaciones];
 
-    cout<<"enter student lastName: ";
-    cin.getline(lastname,19,'\n');
-    
-    //uso de 8 variables para este caso
-    
+    //enter calification from student by input
+    cout<<"enter calification from student "<<endl;
+    for(int i = 0; i <= 4; i++)
+    {
+        cout<<"Enter calificacion "<<(i+1)<<" : ";
+        cin>>calificaciones[i];
+        sumaMateria += calificaciones[i];
+        promedioAlumno = sumaMateria / 5; 
+        calificaciones[6] = promedioAlumno;
+    }
+
+    //imprimo calificaciones del alumno
+    cout<<"Calificaciones del Alumno"<<endl;
+    for(int i = 0; i <= 4; i++)
+    {
+        cout<<"Materia: "<<i+1<<" "<<calificaciones[i]<<endl;
+    }
+    cout<<"Promedio Student>  "<<calificaciones[6];
+  
     
     return 0;
 }
