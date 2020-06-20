@@ -1,0 +1,17 @@
+commit 8e4b67515d43c61cd745661043d316bbe817d202
+Author: Salver DLCC <salver.osorio@outlook.com>
+Date:   Thu Jun 18 19:31:04 2020 -0500
+
+    Promedio Calificaciones
+
+commit 4d178093079fadd55dc65d32e18134df0d4dbb1e
+Author: Salver DLCC <salver.osorio@outlook.com>
+Date:   Wed Jun 17 21:26:09 2020 -0500
+
+    Declaracion de Variables
+
+commit ee5497fc9f83ab904d722096ec520651ed014566
+Author: Salver DLCC <salver.osorio@outlook.com>
+Date:   Wed Jun 17 20:24:33 2020 -0500
+
+    Declaracion de Variables para el manejo de datos
