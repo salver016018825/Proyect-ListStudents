@@ -28,12 +28,28 @@ int main(int argc, char const *argv[])
     double CalificacionesMateria = 0.0;
     double promedioGrupo = 0.0;
     
-    char name[3][10] ={};
-    char lastname[3][20] = {};
-    char materias[5][15] = {};
+    char name[3][10] = {};
+    char lastname[3][10] = {}; 
+
+    /*enter name and lastname in variable type char */
+    cout<<"enter data student"<<endl;
+    for(int i; i < 3; i++)
+    {
+        cout<<"enter name: ";
+        cin>>name[i];
+        cout<<"\nenter lastname;";
+        cin>>lastname[i];
+    }
+
+    /*my list studnets*/
+    for(int i = 0; i < 3; i++)
+    {
+        cout<<name[i]<<endl;
+    }
+
     
     //areglo de 5 posiciones para las calificaciones el ultimo posicion es para el promedio del alumno
-    int totalCalicaciones = 6;
+    const int totalCalicaciones = 6;
     double calificaciones[totalCalicaciones];
 
     //enter calification from student by input
@@ -51,7 +67,7 @@ int main(int argc, char const *argv[])
     cout<<"Calificaciones del Alumno"<<endl;
     for(int i = 0; i <= 4; i++)
     {
-        cout<<"Materia: "<<i+1<<" "<<calificaciones[i]<<endl;
+        cout<<"Materia "<<i+1<<": "<<calificaciones[i]<<endl;
     }
     cout<<"Promedio Student>  "<<calificaciones[6];
   
