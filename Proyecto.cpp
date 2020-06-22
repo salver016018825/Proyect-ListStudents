@@ -22,26 +22,30 @@ int main(int argc, char const* argv[])
 {
     //Mys variables 
 
+
+
     //areglo de 5 posiciones para las calificaciones 
     const int totalCalicaciones = 5;
     double calificaciones[totalCalicaciones] = {0.0, 0.0, 0.0, 0.0, 0.0};
+    double hightNote = 0.0; 
+    double lowNote;
 
     //variables para sacar promedio gruipal
 
     int j = 0;
     double sumaCalificacionPromedioAlumno = 0.0;
     double promedioGrupo = 0.0;
-    double listNotes[2] = {0,0};
+    double listNotes[3] = {0,0};
 
     // datos para un solo alumno
-    char name[2][10] = {};
-    char lastname[2][10] = {};
+    char name[3][10] = {};
+    char lastname[3][10] = {};
     double promedioAlumno = 0.0;
     double sumaNotas = 0.0;
 
     /*enter name and lastname in variable type char */
     cout << "enter data student" << endl;
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 3; i++)
     {
         cout << "enter name: ";
         cin >> name[i];
@@ -61,23 +65,46 @@ int main(int argc, char const* argv[])
             {
                 listNotes[j] = promedioAlumno;
                 sumaCalificacionPromedioAlumno += listNotes[j];
-                promedioGrupo = sumaCalificacionPromedioAlumno / 2;
+                promedioGrupo = sumaCalificacionPromedioAlumno / 3;
                 promedioAlumno = 0.0;
                 sumaNotas = 0.0;
                 j++;
             }
         }
     }
+
+    //promedio bajo 
+    int aux = 0;
+    int aux1 = 0;
+    lowNote = listNotes[0];
+    for (int  i = 0; i < 3; i++)
+    {
+        if (listNotes[i] > hightNote)
+        {
+            hightNote = listNotes[i];
+            aux++;
+        }
+
+        if (listNotes[i] < lowNote)
+        {
+            lowNote = listNotes[i];
+            aux1++;
+        }
+    }
+
+
     //tomar el promecdio de alumno guardarlo en la lista de promedio alumnos
     
-
     cout << "list Notes " << endl;
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 3; i++)
     {
         cout << listNotes[i] << endl;
     }
 
-    cout << "Promedio Grupal " << promedioGrupo << endl;
+    
+    cout << "Promedio Grupal " << promedioGrupo << endl
+        << "Studnet: " << name[aux] << " " << lastname[aux] << "     HightNote: " << hightNote
+        << "\nstudent: " << name[aux1] << " " << lastname[aux1] << "      lowNote: " << lowNote << endl;
+
     return 0;
 }
-
