@@ -22,7 +22,9 @@ int main(int argc, char const* argv[])
 {
     //Mys variables 
 
-
+    //array materias
+    const char listMaterias[5][20] = { "Matematicas","Geografia","Historia","Programacion","Filosofia"};
+    
 
     //areglo de 5 posiciones para las calificaciones 
     const int totalCalicaciones = 5;
@@ -56,7 +58,7 @@ int main(int argc, char const* argv[])
         cout << "enter calification from student " << endl;
         for (int i = 0; i <= 4; i++)
         {
-            cout << "Enter calificacion " << (i + 1) << " : ";
+            cout << "Enter "<< listMaterias[i] << " : ";
             cin >> calificaciones[i];
             sumaNotas += calificaciones[i];
             promedioAlumno = sumaNotas / 5;
