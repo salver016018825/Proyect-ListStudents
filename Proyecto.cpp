@@ -9,7 +9,6 @@
         Materia con menor calificación.
 
     Y al final el promedio general del grupo.
-
     Una vez que se muestre en pantalla, darle la opción al usuario si todos los datos están correctos, y de no ser así se pueda modificar el dato erróneo y posteriormente mostrar de nuevo los datos en pantalla ya con los datos correctos.
 
 */
@@ -19,58 +18,66 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main(int argc, char const* argv[])
 {
     //Mys variables 
-    double promedioAlumno = 0.0;
-    double sumaMateria = 0.0;
+
+    //areglo de 5 posiciones para las calificaciones 
+    const int totalCalicaciones = 5;
+    double calificaciones[totalCalicaciones] = {0.0, 0.0, 0.0, 0.0, 0.0};
+
+    //variables para sacar promedio gruipal
+
+    int j = 0;
     double sumaCalificacionPromedioAlumno = 0.0;
-    double CalificacionesMateria = 0.0;
     double promedioGrupo = 0.0;
-    
-    char name[3][10] = {};
-    char lastname[3][10] = {}; 
+    double listNotes[2] = {0,0};
+
+    // datos para un solo alumno
+    char name[2][10] = {};
+    char lastname[2][10] = {};
+    double promedioAlumno = 0.0;
+    double sumaNotas = 0.0;
 
     /*enter name and lastname in variable type char */
-    cout<<"enter data student"<<endl;
-    for(int i; i < 3; i++)
+    cout << "enter data student" << endl;
+    for (int i = 0; i < 2; i++)
     {
-        cout<<"enter name: ";
-        cin>>name[i];
-        cout<<"\nenter lastname;";
-        cin>>lastname[i];
+        cout << "enter name: ";
+        cin >> name[i];
+        cout << "enter lastname: ";
+        cin >> lastname[i];
+        
+        //enter calification from student by input
+        cout << "enter calification from student " << endl;
+        for (int i = 0; i <= 4; i++)
+        {
+            cout << "Enter calificacion " << (i + 1) << " : ";
+            cin >> calificaciones[i];
+            sumaNotas += calificaciones[i];
+            promedioAlumno = sumaNotas / 5;
+            //el ultimo posicion es para el promedio del alumno
+            if (i == 4) 
+            {
+                listNotes[j] = promedioAlumno;
+                sumaCalificacionPromedioAlumno += listNotes[j];
+                promedioGrupo = sumaCalificacionPromedioAlumno / 2;
+                promedioAlumno = 0.0;
+                sumaNotas = 0.0;
+                j++;
+            }
+        }
     }
-
-    /*my list studnets*/
-    for(int i = 0; i < 3; i++)
-    {
-        cout<<name[i]<<endl;
-    }
-
+    //tomar el promecdio de alumno guardarlo en la lista de promedio alumnos
     
-    //areglo de 5 posiciones para las calificaciones el ultimo posicion es para el promedio del alumno
-    const int totalCalicaciones = 6;
-    double calificaciones[totalCalicaciones];
 
-    //enter calification from student by input
-    cout<<"enter calification from student "<<endl;
-    for(int i = 0; i <= 4; i++)
+    cout << "list Notes " << endl;
+    for (int i = 0; i < 2; i++)
     {
-        cout<<"Enter calificacion "<<(i+1)<<" : ";
-        cin>>calificaciones[i];
-        sumaMateria += calificaciones[i];
-        promedioAlumno = sumaMateria / 5; 
-        calificaciones[6] = promedioAlumno;
+        cout << listNotes[i] << endl;
     }
 
-    //imprimo calificaciones del alumno
-    cout<<"Calificaciones del Alumno"<<endl;
-    for(int i = 0; i <= 4; i++)
-    {
-        cout<<"Materia "<<i+1<<": "<<calificaciones[i]<<endl;
-    }
-    cout<<"Promedio Student>  "<<calificaciones[6];
-  
-    
+    cout << "Promedio Grupal " << promedioGrupo << endl;
     return 0;
 }
+
