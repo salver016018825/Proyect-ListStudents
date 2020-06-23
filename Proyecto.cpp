@@ -26,6 +26,8 @@ int main(int argc, char const* argv[])
     //Mys variables 
       
 
+    
+
     //array materias
     const char listMaterias[5][20] = { "Matematicas","Geografia","Historia","Programacion","Filosofia"};    
 
@@ -38,6 +40,7 @@ int main(int argc, char const* argv[])
     //variables para sacar promedio gruipal
 
     int j = 0;
+<<<<<<< HEAD
     //int temp = 0;
     double sumaCalificacionPromedioAlumno = 0.0;
     double promedioGrupo = 0.0;
@@ -49,6 +52,16 @@ int main(int argc, char const* argv[])
     char lastname[20][30] = {};
     /*char name[3][20] = {};
     char lastname[3][30] = {};*/
+=======
+    int temp = 0;
+    double sumaCalificacionPromedioAlumno = 0.0;
+    double promedioGrupo = 0.0;
+    double listNotes[20] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+    // datos para un solo alumno
+    char name[20][10] = {};
+    char lastname[20][10] = {};
+>>>>>>> PromedioGral
     double promedioAlumno = 0.0;
     double sumaNotas = 0.0;
 
@@ -79,8 +92,13 @@ int main(int argc, char const* argv[])
                     if (i == 4)
                     {
                         listNotes[j] = promedioAlumno;
+<<<<<<< HEAD
                         /*sumaCalificacionPromedioAlumno += listNotes[j];
                         promedioGrupo = sumaCalificacionPromedioAlumno / 20;*/
+=======
+                        sumaCalificacionPromedioAlumno += listNotes[j];
+                        promedioGrupo = sumaCalificacionPromedioAlumno / 20;
+>>>>>>> PromedioGral
                         promedioAlumno = 0.0;
                         sumaNotas = 0.0;
                         j++;
@@ -88,11 +106,16 @@ int main(int argc, char const* argv[])
                     }
                 }
                 //validar datos correctos
+<<<<<<< HEAD
                 cout << "Los datos son correctos? S/N: ";
+=======
+                cout << "Los datos son correctos? S/N";
+>>>>>>> PromedioGral
                 cin >> respuesta;
                 if (respuesta == 'n')
                 {
                     j = j-1;
+<<<<<<< HEAD
                     //double listNotes[20] = {};
                     /*sumaCalificacionPromedioAlumno = 0.0;
                     promedioGrupo = 0.0;*/
@@ -102,6 +125,17 @@ int main(int argc, char const* argv[])
         }
 
     ////Se valida las notas altas y bajas
+=======
+                    double listNotes[20] = { 0,0 };
+                    sumaCalificacionPromedioAlumno = 0.0;
+                    promedioGrupo = 0.0;
+
+                }
+            } while (respuesta != 'y' && respuesta != 'Y');
+        }
+
+    //Se valida las notas altas y bajas
+>>>>>>> PromedioGral
     int aux = 0;
     int aux1 = 0;
     lowNote = listNotes[0];
@@ -128,6 +162,7 @@ int main(int argc, char const* argv[])
     for (int i = 0; i < 20; i++)
     {
         cout <<i+1<<"\t"<< name[i] << " " << lastname[i] <<"\t"<< listNotes[i] << endl;
+<<<<<<< HEAD
         sumaCalificacionPromedioAlumno += listNotes[i];
         promedioGrupo = sumaCalificacionPromedioAlumno / 20;
     }
@@ -136,6 +171,13 @@ int main(int argc, char const* argv[])
     cout << "\nPromedio Grupal " << promedioGrupo << endl
         << "Studnet: " << aux << "\t:" << name[aux-1] << " " << lastname[aux-1] << "\tHightNote: " << hightNote
         << "\nstudent: " << aux1 << "\t:" << name[aux1-1] << " " << lastname[aux1-1] << "\tlowNote: " << lowNote << endl;
+=======
+    }
+
+    cout << "\nPromedio Grupal " << promedioGrupo << endl
+        << "Studnet "<<aux<<"\t:" << name[aux] << " " << lastname[aux] << "\tHightNote: " << hightNote
+        << "\nstudent "<<aux1<<"\t:" << name[aux1] << " " << lastname[aux1] << "\tlowNote: " << lowNote << endl;
+>>>>>>> PromedioGral
 
     return 0;
 }
